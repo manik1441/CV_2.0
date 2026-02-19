@@ -1,0 +1,18 @@
+{
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "college": "Galgotias College of Engineering & Technology, UPTU",
+      "location": "Gr. Noida, Uttar Pradesh",
+      "year": "2013"
+    }
+  ],
+  "contact": {
+    "location": "Hyderabad, TELANGANA, IN",
+    "phone": "+91 9643505814",
+    "message": "Feel free to reach out for collaborations!",
+    "email": "manik1441@gmail.com",
+    "linkedin": "https://linkedin.com/in/manik-chaudhary-91902b59",
+    "github": "https://github.com/manik1441"
+  }
+}
