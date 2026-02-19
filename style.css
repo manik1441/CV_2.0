@@ -621,31 +621,6 @@ ul {
     padding: 2.5rem;
     flex-grow: 1;
     position: relative;
-    max-height: 200px; /* Limit initial height */
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-/* Fade effect for truncated text */
-.project-info::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(transparent, var(--card-bg));
-    transition: opacity 0.3s ease;
-}
-
-/* Hover state: Expand and remove fade */
-.project-card:hover .project-info {
-    max-height: 1000px; /* Large enough to show full content */
-}
-
-.project-card:hover .project-info::after {
-    opacity: 0;
-    pointer-events: none;
 }
 
 .project-info h3 {
