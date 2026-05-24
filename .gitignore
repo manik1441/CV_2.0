@@ -1,0 +1,5 @@
+# Ignore generated comparison differences file
+cv_differences.csv
+
+# Ignore local python virtual environment
+venv/

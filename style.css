@@ -443,6 +443,192 @@ ul {
     line-height: 1.6;
 }
 
+/* Modern Tabbed & Badge Skills View */
+.skills-toggle-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.toggle-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+.toggle-group {
+    background: rgba(226, 232, 240, 0.8);
+    padding: 4px;
+    border-radius: 30px;
+    display: inline-flex;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.toggle-btn.active {
+    background: var(--gradient);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.skills-view-container {
+    display: none;
+    animation: fadeInView 0.5s ease-out forwards;
+}
+.skills-view-container.active {
+    display: block;
+}
+
+@keyframes fadeInView {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Tabs Nav */
+.skills-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+.tab-nav-btn {
+    border: none;
+    background: rgba(255,255,255,0.75);
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(0,0,0,0.03);
+    backdrop-filter: blur(5px);
+    font-size: 1.2rem;
+}
+.tab-nav-btn i {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+.tab-nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+.tab-nav-btn.active {
+    background: var(--gradient);
+    color: #fff;
+}
+.tab-nav-btn.active i {
+    color: #fff;
+}
+
+.skills-tab-pane {
+    display: none;
+    animation: fadeInTab 0.4s ease-out forwards;
+}
+.skills-tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeInTab {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modern-skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
+    backdrop-filter: blur(5px);
+}
+.modern-skill-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    border-bottom: 1px dashed rgba(37,99,235,0.12);
+}
+.modern-skill-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.modern-skill-row:first-child {
+    padding-top: 0;
+}
+.modern-skill-row-header {
+    flex: 0 0 260px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    padding-right: 2rem;
+    line-height: 1.4;
+}
+.modern-skill-row-content {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .modern-skill-row {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem 0;
+    }
+    .modern-skill-row-header {
+        flex: none;
+        padding-right: 0;
+        font-size: 1.1rem;
+    }
+}
+.skills-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+.skill-badge {
+    background: #f1f5f9;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+.skill-badge:hover {
+    background: var(--gradient);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37,99,235,0.25);
+}
+
 /* Experience & Education Timeline */
 .timeline {
     position: relative;
@@ -593,6 +779,17 @@ ul {
 }
 
 /* Projects */
+.project-subsection-title {
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    line-height: 1.2;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -621,6 +818,8 @@ ul {
     padding: 2.5rem;
     flex-grow: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-info h3 {
@@ -639,6 +838,32 @@ ul {
 .project-info p {
     color: var(--text-color);
     font-size: 1rem;
+    flex-grow: 1;
+}
+
+.project-github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+.project-github-link:hover {
+    background: var(--gradient);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 /* Certifications */

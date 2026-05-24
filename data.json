@@ -1,4 +1,314 @@
 {
+  "hero": {
+    "name": "Manik Chaudhary",
+    "title": "Lead QA Architect | AI-Assisted Test Automation Expert",
+    "paragraphs": [
+      "Passionate Lead QA Architect specializing in building enterprise-grade test automation frameworks and pioneering AI-assisted testing solutions. Experienced in leveraging machine learning and artificial intelligence to power intelligent test case generation, self-healing selectors, and predictive analytics that drive autonomous continuous testing.",
+      "Proven track record in strategic technical leadership, resource management, and the orchestration of global cross-functional teams to deliver high-velocity, premium-quality software. Expert in UI, API, database, performance, and cloud-native testing (AWS, Azure) with seamless integration into modern CI/CD pipelines."
+    ]
+  },
+  "about": [
+    "Over 11+ years of extensive experience in test automation architecture, quality engineering, and technical delivery management, driving software excellence across complex enterprise systems.",
+    "Pioneer in designing next-generation, AI-assisted testing frameworks, leveraging machine learning (ML), natural language processing (NLP), and AI model training to orchestrate intelligent test generation, self-healing execution paths, and predictive defect analytics.",
+    "Expertise in cloud-native testing and cloud services (AWS, Azure), successfully provisioning scalable virtualized environments, serverless computing, and cloud data platform integrations to support high-throughput automated execution.",
+    "Adept in full-stack test automation covering UI, API, Database, and Performance testing, with a proven track record of seamlessly integrating advanced quality gates into CI/CD DevOps pipelines using Jenkins, Azure DevOps, and GitHub Actions.",
+    "Skilled in strategic QA planning, delivery governance, and leading cross-functional global teams, effectively fostering a culture of collaboration, innovation, and technical excellence in Agile and SAFe environments.",
+    "Recognized for driving digital transformation by training teams on AI/ML tools, integrating generative AI pair-programming assistants (like GitHub Copilot), and scaling modern DevOps alignment to maximize organizational efficiency."
+  ],
+  "skills": [
+    {
+      "category": "Tools & Technologies",
+      "icon": "fas fa-laptop-code",
+      "subcategories": [
+        {
+          "name": "Programming & Scripting",
+          "items": [
+            "Python",
+            "Java",
+            "SQL",
+            "Oracle PL/SQL"
+          ]
+        },
+        {
+          "name": "Frameworks",
+          "items": [
+            "Hybrid",
+            "TDD",
+            "Robot Framework",
+            "Cucumber (BDD)",
+            "Pytest",
+            "TestNG"
+          ]
+        },
+        {
+          "name": "AI & Generative AI Tools",
+          "items": [
+            "GitHub Copilot",
+            "OpenAI API",
+            "LangChain / LangGraph",
+            "LLMs (GPT-4, Claude)",
+            "Model Context Protocol (MCP)",
+            "Retrieval-Augmented Generation (RAG)",
+            "Prompt Engineering & Prompt Tuning"
+          ]
+        },
+        {
+          "name": "CI/CD & DevOps",
+          "items": [
+            "Jenkins",
+            "Azure DevOps",
+            "GitLab",
+            "Docker"
+          ]
+        },
+        {
+          "name": "Data & Cloud",
+          "items": [
+            "Databricks",
+            "Snowflake",
+            "Oracle RDBMS",
+            "AWS"
+          ]
+        },
+        {
+          "name": "Testing & Automation Tools",
+          "items": [
+            "Selenium WebDriver",
+            "Playwright",
+            "Postman",
+            "Requests",
+            "Pandas",
+            "Tricentis Tosca",
+            "Jmeter",
+            "Mocking Utilities"
+          ]
+        },
+        {
+          "name": "Infrastructure & Platforms",
+          "items": [
+            "Linux",
+            "Windows",
+            "Web/Application Servers"
+          ]
+        },
+        {
+          "name": "Version Control",
+          "items": [
+            "Git",
+            "Github"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Engineering Practices",
+      "icon": "fas fa-cogs",
+      "subcategories": [
+        {
+          "name": "Management & Delivery",
+          "items": [
+            "Resource/People Management",
+            "Project Planning & Delivery",
+            "Agile/Scrum",
+            "SAFe",
+            "Stakeholder Collaboration",
+            "Continuous Improvement"
+          ]
+        },
+        {
+          "name": "Advanced Technology",
+          "items": [
+            "Code Quality",
+            "Code Review",
+            "Static Code Analysis",
+            "CI/CD",
+            "Test Case integration",
+            "Reporting",
+            "Test Automation Governance"
+          ]
+        },
+        {
+          "name": "Quality Engineering",
+          "items": [
+            "Test Automation Framework Architecture (Hybrid, BDD, TDD, POM)",
+            "Test Strategy",
+            "UI/API/DB Automation",
+            "Cloud & Data Testing",
+            "Load/Performance Testing",
+            "Usability Testing",
+            "Test Data Management",
+            "Defect Management",
+            "Quality Gates"
+          ]
+        },
+        {
+          "name": "AI-driven Testing & ML",
+          "items": [
+            "Predictive Quality Analytics",
+            "Intelligent Test Case Generation",
+            "Autonomous & Serverless Execution",
+            "AI Model Training & Prompt Tuning",
+            "Agentic QA Workflows & Orchestration",
+            "Self-Healing Selector Engines"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Leadership & Soft Skills",
+      "icon": "fas fa-users-cog",
+      "subcategories": [
+        {
+          "name": "Leadership",
+          "items": [
+            "Team Mentoring",
+            "Coaching",
+            "Resource Allocation",
+            "Developing Others"
+          ]
+        },
+        {
+          "name": "Communication & Facilitation",
+          "items": [
+            "Agile Ceremonies",
+            "Cross-Functional Collaboration",
+            "Client Demos & Reviews"
+          ]
+        },
+        {
+          "name": "Ownership & Problem-Solving",
+          "items": [
+            "Strategic Decision Making",
+            "Conflict Resolution",
+            "Risk Management"
+          ]
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Azure AI-900 & AZ-900",
+      "issuer": "Microsoft",
+      "icon": "fab fa-microsoft cert-icon"
+    },
+    {
+      "title": "Github Copilot GH-300",
+      "issuer": "Github",
+      "icon": "fab fa-github cert-icon"
+    },
+    {
+      "title": "PCEP - Python Programmer",
+      "issuer": "Python Institute",
+      "icon": "fab fa-python cert-icon"
+    },
+    {
+      "title": "Tricentis Tosca - AS1",
+      "issuer": "Tricentis",
+      "icon": "fas fa-cube cert-icon"
+    },
+    {
+      "title": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "icon": "fas fa-users-cog cert-icon"
+    },
+    {
+      "title": "ISTQB CTFL",
+      "issuer": "ISTQB",
+      "icon": "fas fa-scroll cert-icon"
+    }
+  ],
+  "experience": [
+    {
+      "role": "QA Architect / Resource Manager / Test Automation Lead",
+      "company": "EPAM Systems",
+      "duration": "Aug 2021 - Present",
+      "details": [
+        "Architected and scaled enterprise-wide test automation frameworks utilizing Python, Pytest, BDD methodologies, and Selenium across cloud-native environments (AWS, Azure).",
+        "<strong>AI Enablement & People Management:</strong> Managed and upskilled a cross-functional global QA team of 8 members in AI/ML tools, prompt engineering, and generative AI coding assistants like GitHub Copilot.",
+        "Designed and implemented AI-assisted testing solutions, leveraging machine learning (ML) models for predictive defect analysis, autonomous test case generation, and self-healing execution scripts.",
+        "Orchestrated cloud-native test architectures and serverless testing solutions on AWS and Azure, utilizing Databricks and Snowflake to validate complex, large-scale data migrations and automate big data workflows.",
+        "Engineered modular, highly reusable UI, API, and database testing libraries, reducing custom automation maintenance efforts and accelerating regression cycles.",
+        "Leveraged Tricentis Tosca to implement model-based test automation, establishing high-coverage regression suites for enterprise business workflows.",
+        "Defined comprehensive quality engineering strategies and robust quality gates integrated seamlessly into Jenkins and Azure DevOps CI/CD pipelines.",
+        "Managed resource allocation, end-to-end project planning, and delivery governance in Agile/SAFe environments to align QA outcomes with strategic business goals."
+      ]
+    },
+    {
+      "role": "SDET II",
+      "company": "S&P GLOBAL",
+      "duration": "Jun 2019 - Aug 2021",
+      "details": [
+        "Contributed to the design and development of automation frameworks for UI and API testing using Java, Python, with requests, Selenium and pytest.",
+        "Integrated automation solutions with CI/CD pipelines and defect management tools such as JIRA and TFS, improving release efficiency and traceability.",
+        "Delivered internal training sessions to upskill teams on automation best practices and foster knowledge sharing.",
+        "Actively participated in tool evaluation and proof-of-concepts (PoCs) to support enterprisewide adoption of scalable QA solutions.",
+        "Gained strong exposure to the financial domain, enhancing business understanding and test coverage for critical applications."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Guardian India Operations",
+      "duration": "Mar 2018 - Jun 2019",
+      "details": [
+        "Designed and implemented automation solutions for regression testing using SahiPro, improving test efficiency and reducing manual effort.",
+        "Assisted in test strategy creation and participated in functional specification reviews to ensure early defect prevention and alignment with business requirements.",
+        "Conducted proof-of-concepts (PoCs) to evaluate and recommend new automation tools and frameworks for enterprise adoption, contributing to continuous improvement of QA practices.",
+        "Collected and analyzed business requirements to design and implement effective solutions.",
+        "Contributed to the development of back-end and front-end modules, ensuring functionality, performance, and scalability.",
+        "Performed troubleshooting and bug fixing to maintain application stability and improve user experience."
+      ]
+    },
+    {
+      "role": "QA Engineer",
+      "company": "SoftTech India Pvt Ltd",
+      "duration": "Oct 2014 - Mar 2018",
+      "details": [
+        "Created and executed functional and regression test suites to validate application quality and stability.",
+        "Developed early automation test scripts to reduce manual effort and accelerate testing cycles.",
+        "Actively participated in Agile ceremonies (sprint planning, daily stand-ups, retrospectives) to ensure continuous quality delivery and alignment with development goals."
+      ]
+    }
+  ],
+  "projects": {
+    "professional": [
+      {
+        "title": "Google – GGRC",
+        "role": "Lead Automation Engineer",
+        "description": "Google GGRC is an open-source framework meticulously designed to streamline Governance, Risk, and Compliance management. By elegantly mapping complex regulations to specific internal controls, it provides organizations with a structured approach to oversight. While currently considered a legacy or archived project, its core architecture remains a sophisticated blueprint for automating audits, tracking risks, and maintaining a robust, transparent compliance posture."
+      },
+      {
+        "title": "Amazon PLOA",
+        "role": "Software Engineer",
+        "description": "Amazon PLOA is a comprehensive digital ecosystem designed to streamline and automate Leave of Absence management for its global workforce. By centralizing complex workflows—such as eligibility tracking, benefits integration, and regulatory compliance—it ensures a seamless experience for employees needing extended time away. The platform elegantly bridges the gap between workforce stability and employee well-being, providing a robust framework for managing unpaid leave and health-related benefits at scale."
+      },
+      {
+        "title": "S&P Capital IQ",
+        "role": "SDET II",
+        "description": "S&P Global engaged EPAM to establish a Talent Centre to deliver software development and testing services for modernizing S&P Ratings' legacy applications and workflows. The project aimed to replace disjointed legacy tools with a unified, cloud-based, and interactive desktop platform, enabling Ratings Analysts to execute workflows efficiently without relying on multiple systems. This modernization improved efficiency, data quality, automation, and reduced Ratings processing turnaround time."
+      }
+    ],
+    "personal": [
+      {
+        "title": "AI-Assisted Test Automation Framework",
+        "role": "Lead Architect & Developer",
+        "github": "https://github.com/manik1441/ai_assisted_test_automation",
+        "description": "A pioneering enterprise-level test automation framework integrated with AI models to achieve autonomous execution, dynamic test data generation, and self-healing script capabilities. Implemented using Python, it incorporates intelligent log analysis, predictive failure modeling, and an adaptive selector healing engine that automatically repairs broken element locators at runtime, substantially reducing test maintenance cycles and accelerating regression pipelines."
+      },
+      {
+        "title": "Agentic AI-Powered Test Data Management (TDM)",
+        "role": "Lead Architect & Developer",
+        "github": "https://github.com/manik1441/TDM",
+        "description": "An agentic, multi-agent Test Data Management (TDM) platform designed to dynamically provision complete, custom test data environments directly from natural language prompts. Built with Python and FastAPI, this system orchestrates specialized AI agents (Lead & Generator Agents) to dynamically compile database structures, spin up schema-compliant FastAPI endpoints, and inject synthetic datasets obeying complex relational constraints. Featuring real-time WebSocket pipeline tracking and an integrated SPA command center, it eliminates manual database provisioning and acts as an autonomous, on-demand data provider for automation suites."
+      },
+      {
+        "title": "Selenium 2.0 - Production UI Testing Framework",
+        "role": "Lead Architect & Developer",
+        "github": "https://github.com/manik1441/Selenium_2.0",
+        "description": "A highly modular, production-ready UI automation framework engineered with Python and Selenium WebDriver. Implementing the Page Object Model (POM) design pattern, it features automated environment bootstrapping, robust custom waiting utilities to eliminate synchronization flakes, and detailed HTML report generation. The framework is designed for seamless integration into CI/CD quality gates, providing highly parallelizable and stable browser testing execution across multiple platforms."
+      }
+    ]
+  },
   "education": [
     {
       "degree": "Bachelor of Technology",
@@ -12,7 +322,7 @@
     "phone": "+91 9643505814",
     "message": "Feel free to reach out for collaborations!",
     "email": "manik1441@gmail.com",
-    "linkedin": "https://linkedin.com/in/manik-chaudhary-91902b59",
+    "linkedin": "https://www.linkedin.com/in/manik-chaudhary/",
     "github": "https://github.com/manik1441"
   }
 }
