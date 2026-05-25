@@ -9,7 +9,7 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT, TA_JUSTIFY
 # File paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data.json")
-PDF_PATH = os.path.join(BASE_DIR, "Manik_Chaudhary_Test_Lead_V1.pdf")
+PDF_PATH = os.path.join(BASE_DIR, "Manik_Chaudhary_Test_Lead.pdf")
 
 # =========================================================================
 # PDF-ONLY HARDCODED CONTENT CONFIGURATIONS (Exposed here for easy updates)
@@ -81,7 +81,9 @@ def build_pdf():
         leftMargin=36,
         rightMargin=36,
         topMargin=24,
-        bottomMargin=24
+        bottomMargin=24,
+        title="Manik Chaudhary - Resume",
+        author="Manik Chaudhary"
     )
 
     story = []
