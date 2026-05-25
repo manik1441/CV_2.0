@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Click event listener to expand/collapse
                     const timelineContent = timelineItem.querySelector('.timeline-content');
-                    timelineContent.addEventListener('click', function() {
+                    timelineContent.addEventListener('click', function () {
                         // Close other open experience items
                         const otherContents = experienceTimeline.querySelectorAll('.timeline-content');
                         otherContents.forEach(otherItem => {
@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const projectCard = document.createElement('div');
                         projectCard.classList.add('project-card');
 
-                        const githubLinkHtml = project.github 
-                            ? `<a href="${project.github}" target="_blank" class="project-github-link"><i class="fab fa-github"></i> View Repository</a>` 
+                        const githubLinkHtml = project.github
+                            ? `<a href="${project.github}" target="_blank" class="project-github-link"><i class="fab fa-github"></i> View Repository</a>`
                             : '';
 
                         projectCard.innerHTML = `
