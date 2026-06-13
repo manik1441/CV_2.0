@@ -187,34 +187,60 @@
     }
   ],
   "certifications": [
+        {
+      "title": "Claude Certified Architect Foundations",
+      "issuer": "Anthropic",
+      "logo": "assets/claude.svg",
+      "verificationUrl": "https://verify.skilljar.com/c/rb83armvqen5",
+      "icon": "bi bi-claude cert-icon"
+    },
+        {
+      "title": "Github Copilot GH-300",
+      "issuer": "Github",
+      "logo": "assets/github.svg",
+      "verificationUrl": "https://learn.microsoft.com/en-us/users/manikchaudhary-3965/credentials/c9bcb06c8cc17d44?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+      "icon": "fab fa-github cert-icon"
+    },
     {
-      "title": "Azure AI-900 & AZ-900",
+      "title": "AI-900: Microsoft Azure AI Fundamentals",
       "issuer": "Microsoft",
+      "logo": "assets/microsoft.svg",
+      "verificationUrl": "https://learn.microsoft.com/en-us/users/manikchaudhary-3965/credentials/acec461ed66d618a?ref=https%3A%2F%2Fwww.linkedin.com%2F",
       "icon": "fab fa-microsoft cert-icon"
     },
     {
-      "title": "Github Copilot GH-300",
-      "issuer": "Github",
-      "icon": "fab fa-github cert-icon"
+      "title": "AZ-900: Microsoft Azure Fundamentals",
+      "issuer": "Microsoft",
+      "logo": "assets/microsoft.svg",
+      "verificationUrl": "https://learn.microsoft.com/en-us/users/manikchaudhary-3965/credentials/792f559d91f2bf6d?ref=https%3A%2F%2Fwww.linkedin.com%2F",
+      "icon": "fab fa-microsoft cert-icon"
     },
     {
       "title": "PCEP - Python Programmer",
       "issuer": "Python Institute",
+      "logo": "assets/python.svg",
+      "verificationUrl": "https://www.credly.com/badges/8a082720-ea6e-4935-87fb-987971fe62ab?source=linked_in_profile",
       "icon": "fab fa-python cert-icon"
     },
     {
       "title": "Tricentis Tosca - AS1",
       "issuer": "Tricentis",
+      "logo": "assets/tricentis.svg",
+      "verificationUrl": "https://verify.skilljar.com/c/ryjmck4rq8dh",
       "icon": "fas fa-cube cert-icon"
     },
     {
       "title": "Professional Scrum Master I",
       "issuer": "Scrum.org",
+      "logo": "assets/scrum-org.png",
+      "verificationUrl": "https://www.credly.com/badges/f8edde7d-c1b3-49c1-abc4-0196fad5e265?source=linked_in_profile",
       "icon": "fas fa-users-cog cert-icon"
     },
     {
       "title": "ISTQB CTFL",
       "issuer": "ISTQB",
+      "logo": "assets/istqb.svg",
+      "verificationUrl": "https://scr.istqb.org/?name=Manik+Chaudhary&number=&orderBy=relevancy&orderDirection=&dateStart=&dateEnd=&expiryStart=&expiryEnd=&certificationBody=&examProvider=&certificationLevel=&country=",
       "icon": "fas fa-scroll cert-icon"
     }
   ],

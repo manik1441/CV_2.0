@@ -1,6 +1,7 @@
 import os
 import json
 import re
+from html import escape
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether
@@ -30,7 +31,8 @@ OVERRIDE_SUMMARY = (
 PDF_ONLY_CERTIFICATIONS = [
     {
         "title": "SAFe 5.0 Practitioner",
-        "issuer": "Scaled Agile"
+        "issuer": "Scaled Agile",
+        "verificationUrl": "https://www.credly.com/badges/40bdda5d-fa9e-453e-9a59-1c9359a2ede2/linked_in_profile"
     }
 ]
 
@@ -455,13 +457,31 @@ def build_pdf():
     for c in certifications:
         title = c.get("title", "")
         issuer = c.get("issuer", "")
-        cert_cells.append(Paragraph(f"&bull; <b>{title}</b> ({issuer})", cert_item_style))
+        verification_url = c.get("verificationUrl", "")
+        safe_title = escape(title)
+        safe_issuer = escape(issuer)
+        title_markup = (
+            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
+            f'<u><b>{safe_title}</b></u></link>'
+            if verification_url
+            else f"<b>{safe_title}</b>"
+        )
+        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
         
     # Hardcode SAFe 5.0 Practitioner directly in the PDF representation (PDF-only display)
     for c in PDF_ONLY_CERTIFICATIONS:
         title = c.get("title", "")
         issuer = c.get("issuer", "")
-        cert_cells.append(Paragraph(f"&bull; <b>{title}</b> ({issuer})", cert_item_style))
+        verification_url = c.get("verificationUrl", "")
+        safe_title = escape(title)
+        safe_issuer = escape(issuer)
+        title_markup = (
+            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
+            f'<u><b>{safe_title}</b></u></link>'
+            if verification_url
+            else f"<b>{safe_title}</b>"
+        )
+        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
         
     # Standardize to 2 columns (Widths: 270pt, 270pt)
     cert_rows = []

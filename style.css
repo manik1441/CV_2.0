@@ -900,6 +900,51 @@ ul {
     -webkit-text-fill-color: transparent;
 }
 
+.cert-logo {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.cert-verify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 999px;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.cert-verify-link:hover,
+.cert-verify-link:focus-visible {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cert-verify-link i {
+    font-size: 0.75rem;
+}
+
+.cert-verify-link-disabled {
+    border-color: #a0a8b0;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.cert-verify-link-disabled:hover {
+    background: transparent;
+    color: #6c757d;
+    transform: none;
+}
+
 .cert-card h3 {
     margin-bottom: 0.5rem;
     color: var(--dark-color);

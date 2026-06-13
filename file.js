@@ -89,20 +89,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Load Certifications Data
+            // Load Certifications Data (simple image rendering)
             const certGrid = document.getElementById('cert-grid');
             if (certGrid && data.certifications) {
+                certGrid.innerHTML = ''; // clear any placeholders
                 data.certifications.forEach(cert => {
-                    const certCard = document.createElement('div');
-                    certCard.classList.add('cert-card');
+                    const card = document.createElement('div');
+                    card.className = 'cert-card';
 
-                    certCard.innerHTML = `
-                        <i class="${cert.icon}"></i>
+                    const logoMarkup = cert.logo
+                        ? `<img src="${cert.logo}" alt="${cert.title} logo" class="cert-logo" />`
+                        : `<i class="${cert.icon || 'fas fa-certificate cert-icon'}"></i>`;
+
+                    const verificationMarkup = cert.verificationUrl
+                        ? `<a href="${cert.verificationUrl}" class="cert-verify-link" target="_blank" rel="noopener noreferrer">
+                            Verify Certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                           </a>`
+                        : `<span class="cert-verify-link cert-verify-link-disabled" title="Verification URL has not been added">
+                            Verification Link Not Added
+                           </span>`;
+
+                    card.innerHTML = `
+                        ${logoMarkup}
                         <h3>${cert.title}</h3>
                         <h4>${cert.issuer}</h4>
+                        ${verificationMarkup}
                     `;
 
-                    certGrid.appendChild(certCard);
+                    certGrid.appendChild(card);
                 });
             }
 
