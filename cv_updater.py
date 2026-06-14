@@ -82,8 +82,8 @@ def build_pdf():
         pagesize=letter,
         leftMargin=36,
         rightMargin=36,
-        topMargin=24,
-        bottomMargin=24,
+        topMargin=18,
+        bottomMargin=18,
         title="Manik Chaudhary - Resume",
         author="Manik Chaudhary"
     )
@@ -143,8 +143,8 @@ def build_pdf():
         borderPadding=4.5,
         leftIndent=-5,
         rightIndent=-5,
-        spaceBefore=10,
-        spaceAfter=12,
+        spaceBefore=8,
+        spaceAfter=10,
         keepWithNext=True
     )
 
@@ -212,7 +212,7 @@ def build_pdf():
         
     full_summary = " ".join(summary_paragraphs)
     story.append(Paragraph(clean_html_tags(full_summary), body_style))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 2))
     story.append(draw_line())
 
     # 3. CORE EXPERTISE & TECHNICAL SKILLS
@@ -284,18 +284,77 @@ def build_pdf():
     skills_table = Table(skill_rows, colWidths=[130, 410])
     skills_table.setStyle(TableStyle([
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 3),
-        ('TOPPADDING', (0, 0), (-1, -1), 3),
-        ('LEFTPADDING', (0, 0), (-1, -1), 5),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 5),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
+        ('TOPPADDING', (0, 0), (-1, -1), 2),
+        ('LEFTPADDING', (0, 0), (-1, -1), 4),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 4),
         ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#2D3748")), # Exact solid dark charcoal borders
     ]))
     
     story.append(skills_table)
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 2))
     story.append(draw_line())
 
-    # 4. PROFESSIONAL EXPERIENCE
+    # 4. CERTIFICATIONS
+    story.append(Paragraph("CERTIFICATIONS", section_heading))
+
+    cert_item_style = ParagraphStyle(
+        'CertItem', parent=styles['Normal'], fontName='Helvetica', fontSize=8, leading=10, textColor=text_color
+    )
+    
+    # We will arrange certifications in an elegant 2-column or 3-column table
+    certifications = data.get("certifications", [])
+    cert_cells = []
+    for c in certifications:
+        title = c.get("title", "")
+        issuer = c.get("issuer", "")
+        verification_url = c.get("verificationUrl", "")
+        safe_title = escape(title)
+        safe_issuer = escape(issuer)
+        title_markup = (
+            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
+            f'<u><b>{safe_title}</b></u></link>'
+            if verification_url
+            else f"<b>{safe_title}</b>"
+        )
+        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
+        
+    # Hardcode SAFe 5.0 Practitioner directly in the PDF representation (PDF-only display)
+    for c in PDF_ONLY_CERTIFICATIONS:
+        title = c.get("title", "")
+        issuer = c.get("issuer", "")
+        verification_url = c.get("verificationUrl", "")
+        safe_title = escape(title)
+        safe_issuer = escape(issuer)
+        title_markup = (
+            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
+            f'<u><b>{safe_title}</b></u></link>'
+            if verification_url
+            else f"<b>{safe_title}</b>"
+        )
+        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
+        
+    # Standardize to 2 columns (Widths: 270pt, 270pt)
+    cert_rows = []
+    for idx in range(0, len(cert_cells), 2):
+        col1 = cert_cells[idx]
+        col2 = cert_cells[idx+1] if idx+1 < len(cert_cells) else ''
+        cert_rows.append([col1, col2])
+        
+    cert_table = Table(cert_rows, colWidths=[270, 270])
+    cert_table.setStyle(TableStyle([
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
+        ('TOPPADDING', (0, 0), (-1, -1), 2),
+        ('LEFTPADDING', (0, 0), (-1, -1), 0),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+    ]))
+    
+    story.append(cert_table)
+    story.append(Spacer(1, 2))
+    story.append(draw_line())
+
+    # 5. PROFESSIONAL EXPERIENCE
     story.append(Paragraph("PROFESSIONAL EXPERIENCE", section_heading))
 
     role_title_style = ParagraphStyle(
@@ -341,13 +400,8 @@ def build_pdf():
             exp_flowables.append(Paragraph(bullet_text, bullet_style))
             
         story.append(KeepTogether(exp_flowables))
-        
-        # Page break logic: Split exactly after the first two experiences (EPAM & S&P Global)
-        # to ensure that Page 1 does not overflow and Page 2 holds the remaining content.
-        if index == 1:
-            story.append(PageBreak())
 
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 2))
     story.append(draw_line())
 
     # PAGE 2 CONTINUES
@@ -441,66 +495,7 @@ def build_pdf():
     ]))
     
     story.append(proj_table)
-    story.append(Spacer(1, 4))
-    story.append(draw_line())
-
-    # 6. CERTIFICATIONS
-    story.append(Paragraph("PROFESSIONAL CERTIFICATIONS", section_heading))
-    
-    cert_item_style = ParagraphStyle(
-        'CertItem', parent=styles['Normal'], fontName='Helvetica', fontSize=8, leading=10, textColor=text_color
-    )
-    
-    # We will arrange certifications in an elegant 2-column or 3-column table
-    certifications = data.get("certifications", [])
-    cert_cells = []
-    for c in certifications:
-        title = c.get("title", "")
-        issuer = c.get("issuer", "")
-        verification_url = c.get("verificationUrl", "")
-        safe_title = escape(title)
-        safe_issuer = escape(issuer)
-        title_markup = (
-            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
-            f'<u><b>{safe_title}</b></u></link>'
-            if verification_url
-            else f"<b>{safe_title}</b>"
-        )
-        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
-        
-    # Hardcode SAFe 5.0 Practitioner directly in the PDF representation (PDF-only display)
-    for c in PDF_ONLY_CERTIFICATIONS:
-        title = c.get("title", "")
-        issuer = c.get("issuer", "")
-        verification_url = c.get("verificationUrl", "")
-        safe_title = escape(title)
-        safe_issuer = escape(issuer)
-        title_markup = (
-            f'<link href="{escape(verification_url, quote=True)}" color="#2563EB">'
-            f'<u><b>{safe_title}</b></u></link>'
-            if verification_url
-            else f"<b>{safe_title}</b>"
-        )
-        cert_cells.append(Paragraph(f"&bull; {title_markup} ({safe_issuer})", cert_item_style))
-        
-    # Standardize to 2 columns (Widths: 270pt, 270pt)
-    cert_rows = []
-    for idx in range(0, len(cert_cells), 2):
-        col1 = cert_cells[idx]
-        col2 = cert_cells[idx+1] if idx+1 < len(cert_cells) else ''
-        cert_rows.append([col1, col2])
-        
-    cert_table = Table(cert_rows, colWidths=[270, 270])
-    cert_table.setStyle(TableStyle([
-        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
-        ('TOPPADDING', (0, 0), (-1, -1), 2),
-        ('LEFTPADDING', (0, 0), (-1, -1), 0),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 0),
-    ]))
-    
-    story.append(cert_table)
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 2))
     story.append(draw_line())
 
     # 7. EDUCATION
